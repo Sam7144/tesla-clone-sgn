@@ -1,0 +1,303 @@
+{
+    "top":[
+        {
+            "name":"Model S"
+        },
+        {
+            "name":"Model 3"
+        },
+        {
+            "name":"Model X"
+        }
+        ,
+        {
+            "name":"Model Y"
+        },{
+            "name":"Solor Roof"
+        },
+        {
+            "name":"Solor Panel"
+        }
+        ,{
+            "name":"PowerWall"
+        }
+    ],
+    "models":[
+        {
+            "name":"Model Y",
+            "slug":"modely",
+            "image":"/images/model-y.jpg",
+            "leftBtn":"Custom Order",
+            "RightBtn":"View Inventory",
+            "description":"schedule a demo drive"
+        },
+        {
+            "name":"Model S",
+            "slug":"models",
+            "image":"/images/model-s.jpg",
+            "leftBtn":"Custom Order",
+            "RightBtn":"View Inventory",
+            "description":"schedule a demo drive"
+        },
+        {
+            "name":"Model X",
+            "slug":"modelx",
+            "image":"/images/model-x.jpg",
+            "leftBtn":"Custom Order",
+            "RightBtn":"View Inventory",
+            "description":"schedule a demo drive"
+        },
+        {
+            "name":"Model 3",
+            "slug":"model3",
+            "image":"/images/model-3.jpg",
+            "leftBtn":"Custom Order",
+            "RightBtn":"View Inventory",
+            "description":"schedule a demo drive"
+        },
+        {
+            "name":"Solar Panels",
+            "slug":"panels",
+            "image":"/images/solar-panel.jpg",
+            "leftBtn":"Order now",
+            "RightBtn":"Learn more",
+            "description":"Lowest Cost Solar Panels in America"
+        },
+        {
+            "name":"Solar Roof",
+            "slug":"roof",
+            "image":"/images/solar-roof.jpg",
+            "leftBtn":"Order now",
+            "RightBtn":"Learn more",
+            "description":"Produce Clean Energy From Your Roof"
+        },
+
+        {
+            "name":"Accessories",
+            "slug":"accessories",
+            "image":"/images/accessories.jpg",
+            "leftBtn":"Shop Now"
+        }
+    ],
+    "all":[
+        {
+            "name":"Model S",
+            "slug":"models",
+            "image":"/images/model-s.jpg",
+            "title":"plaid",
+            "speed":{
+                "start":"396mi",
+                "second":"1.99s",
+                "third":"200mph",
+                "fourth":"1020hp"
+            },
+            "miles":{
+                "start":"Range (EPA est.)",
+                "second":"10-60 mph*",
+                "third":"Top Speed†",
+                "fourth":"Peak Power"
+            },
+            "leftBtn":"Custom Order",
+            "RightBtn":"View Inventory",
+            "description":"Interior of the Future",
+            "interior":"/images/model-s-interior.jpg",
+            "msinterior":"/images/ms-interior.jpg",
+            "connect":"Stay Connected",
+            "connectdes":"Instantly connect with multi-device Bluetooth, or fast charge devices with wireless and 36-watt USB-C charging.",
+            "sound":"Immersive Sound",
+            "sounddes":"A 22-speaker, 960-watt audio system with Active Road Noise Reduction offers immersive listening and studio-grade sound quality.",
+            "video1":"/videos/piccuz.mp4",
+            "bikepark":"/images/bike-park.jpg",
+            "room":"Room for Everything",
+            "roomp":"With front and rear trunks and fold-flat seats you can fit your bike without taking the wheel off—and your luggage too.",
+            "speedtest":"/images/performance.jpg",
+            "performanceSpeed":{
+                "start":"1,020hp",
+                "second":"19.23s",
+                "third":"1.99s"
+            },
+            "performancemiles":{
+                "start":"Peak Power",
+                "second":"@155 mph 1/4 mile",
+                "third":"0-60 mph*"
+            },
+            
+            "ludicrous":"Model S Plaid has the quickest acceleration of any vehicle in production. Updated battery architecture for all Model S trims enables back-to-back track runs without performance degradation. Chat with a Tesla Advisor to learn more about Model S or schedule a demo drive today.",
+            "train":"Electric Powertrain",
+            "powertrain":"Model S platforms unite powertrain and battery technologies for unrivaled performance, range and efficiency. New module and pack thermal architecture allows faster charging and gives you more power and endurance in all conditions.",
+            "motor":"/images/motor.jpg",
+            "exterior":"/images/exterior.jpg",
+            "exteriora":"/images/exterior-a.jpg",
+            "exteriorb":"/images/exterior-b.jpg",
+            "exteriorc":"/images/exterior-c.jpg",
+            "vid2":"/videos/plaid-range.mp4",
+            "safety":"/images/safety.jpg",
+            "autopilot":"/images/autopilot.jpg",
+            "navigate":"/videos/navigate.mp4",
+            "specs":"/images/specs.jpg",
+            "hero":"/images/hero.jpg"
+        },
+        {
+            "name":"Model 3",
+            "slug":"model3",
+            "image":"/images/m3-1.jpg",
+            "title":"Schedule a Demo Drive",
+            "speed":{
+                "start":"396mi",
+                "second":"1.99s",
+                "third":"200mph",
+                "fourth":"1020hp"
+            },
+            "miles":{
+                "start":"Range (EPA est.)",
+                "second":"10-60 mph*",
+                "third":"Top Speed†",
+                "fourth":"Peak Power"
+            },
+            "leftBtn":"Custom Order",
+            "RightBtn":"View Inventory",
+            "description":"Interior of the Future",
+            "interior":"/images/model-s-interior.jpg",
+            "msinterior":"/images/m3-4.jpg",
+            "connect":"Stay Connected",
+            "connectdes":"Instantly connect with multi-device Bluetooth, or fast charge devices with wireless and 36-watt USB-C charging.",
+            "sound":"Immersive Sound",
+            "sounddes":"A 22-speaker, 960-watt audio system with Active Road Noise Reduction offers immersive listening and studio-grade sound quality.",
+            "video1":"/videos/piccuz.mp4",
+            "bikepark":"/images/bike-park.jpg",
+            "room":"Room for Everything",
+            "roomp":"With front and rear trunks and fold-flat seats you can fit your bike without taking the wheel off—and your luggage too.",
+            "speedtest":"/images/m3-2.jpg",
+            "performanceSpeed":{
+                "start":"1,020hp",
+                "second":"19.23s",
+                "third":"1.99s"
+            },
+            "performancemiles":{
+                "start":"Peak Power",
+                "second":"@155 mph 1/4 mile",
+                "third":"0-60 mph*"
+            },
+            "ludicrous":"Model S Plaid has the quickest acceleration of any vehicle in production. Updated battery architecture for all Model S trims enables back-to-back track runs without performance degradation. Chat with a Tesla Advisor to learn more about Model S or schedule a demo drive today.",
+            "powertrain":"Model S platforms unite powertrain and battery technologies for unrivaled performance, range and efficiency. New module and pack thermal architecture allows faster charging and gives you more power and endurance in all conditions.",
+            "motor":"/images/motor.jpg",
+            "exterior":"/images/exterior.jpg",
+            "exteriora":"/images/exterior-a.jpg",
+            "exteriorb":"/images/exterior-b.jpg",
+            "exteriorc":"/images/exterior-c.jpg",
+            "vid2":"/videos/plaid-range.mp4",
+            "safety":"/images/safety.jpg",
+            "autopilot":"/images/autopilot.jpg",
+            "navigate":"/videos/navigate.mp4",
+            "specs":"/images/specs.jpg",
+            "hero":"/images/hero.jpg"
+        },
+        {
+            "name":"Model x",
+            "slug":"modelx",
+            "image":"/images/model-x.jpg",
+            "title":"plaid",
+            "speed":{
+                "start":"333mi",
+                "second":"2.25s",
+                "third":"9.9s",
+                "fourth":"1020hp"
+            },
+            "miles":{
+                "start":"Range (EPA est.)",
+                "second":"0-60 mph*",
+                "third":"1/4 Mile",
+                "fourth":"Peak Power"
+            },
+            "leftBtn":"Custom Order",
+            "RightBtn":"View Inventory",
+            "description":"Interior of the Future",
+            "interior":"/images/model-s-interior.jpg",
+            "msinterior":"/images/mxinterior.jpg",
+            "connect":"Stay Connected",
+            "connectdes":"Instantly connect with multi-device Bluetooth, or fast charge devices with wireless and 36-watt USB-C charging.",
+            "sound":"Immersive Sound",
+            "sounddes":"A 22-speaker, 960-watt audio system with Active Road Noise Reduction offers immersive listening and studio-grade sound quality.",
+            "video1":"/videos/piccuz.mp4",
+            "bikepark":"/images/mx-bike.jpg",
+            "room":"Room for Everything",
+            "roomp":"With front and rear trunks and fold-flat seats you can fit your bike without taking the wheel off—and your luggage too.",
+            "speedtest":"/images/mx-speed.jpg",
+            "performanceSpeed":{
+                "start":"1,020hp",
+                "second":"9.9s",
+                "third":"2.5s"
+            },
+            "performancemiles":{
+                "start":"Peak Power",
+                "second":"1/4 mile",
+                "third":"0-60 mph*"
+            },
+            "ludicrous":"With the most power and quickest acceleration of any SUV, Model X Plaid is the highest performing SUV ever built. Updated battery architecture enables both Long Range and Plaid configurations to complete back-to-back track runs without performance degradation. Chat with a Tesla Advisor to learn more about Model X or schedule a demo drive today.",
+            "powertrain":"Model X platforms unite powertrain and battery technologies for an unrivaled combination of performance, range and efficiency. New module and pack thermal architecture allows for faster charging and gives you more power and endurance in all conditions.",
+            "motor":"/images/motor.jpg",
+            "exterior":"/images/mx-5.jpg",
+            "exteriora":"/images/mx-start.jpg",
+            "exteriorb":"/images/mx-second.jpg",
+            "exteriorc":"/images/mx-third.jpg",
+            "vid2":"/videos/plaid-range.mp4",
+            "safety":"/images/safety.jpg",
+            "autopilot":"/images/autopilot.jpg",
+            "navigate":"/videos/navigate.mp4",
+            "specs":"/images/specs.jpg",
+            "hero":"/images/hero.jpg"
+        },{
+            "name":"Model Y",
+            "slug":"modely",
+            "image":"/images/my.jpg",
+            "title":"Schedule a Demo Drive",
+            "speed":{
+                "start":"76cu ft",
+                "second":"330mi",
+                "third":"AWD"
+            },
+            "miles":{
+                "start":"Cargo Space",
+                "second":"Range (EPA est.)",
+                "third":"Dual Motor"
+            },
+            "leftBtn":"Custom Order",
+            "RightBtn":"View Inventory",
+            "description":"Interior of the Future",
+            "interior":"/images/y1.jpg",
+            "msinterior":"/images/ms-interior.jpg",
+            "connect":"Stay Connected",
+            "connectdes":"Instantly connect with multi-device Bluetooth, or fast charge devices with wireless and 36-watt USB-C charging.",
+            "sound":"Immersive Sound",
+            "sounddes":"A 22-speaker, 960-watt audio system with Active Road Noise Reduction offers immersive listening and studio-grade sound quality.",
+            "video1":"/videos/piccuz.mp4",
+            "bikepark":"/images/bike-park.jpg",
+            "room":"Room for Everything",
+            "roomp":"With front and rear trunks and fold-flat seats you can fit your bike without taking the wheel off—and your luggage too.",
+            "speedtest":"/images/y2.jpg",
+            "performanceSpeed":{
+                "start":"1,020hp",
+                "second":"19.23s",
+                "third":"1.99s"
+            },
+            "performancemiles":{
+                "start":"Peak Power",
+                "second":"@155 mph 1/4 mile",
+                "third":"0-60 mph*"
+            },
+            "ludicrous":"Model S Plaid has the quickest acceleration of any vehicle in production. Updated battery architecture for all Model S trims enables back-to-back track runs without performance degradation. Chat with a Tesla Advisor to learn more about Model S or schedule a demo drive today.",
+            "powertrain":"Model S platforms unite powertrain and battery technologies for unrivaled performance, range and efficiency. New module and pack thermal architecture allows faster charging and gives you more power and endurance in all conditions.",
+            "motor":"/images/motor.jpg",
+            "exterior":"/images/exterior.jpg",
+            "exteriora":"/images/exterior-a.jpg",
+            "exteriorb":"/images/exterior-b.jpg",
+            "exteriorc":"/images/exterior-c.jpg",
+            "vid2":"/videos/plaid-range.mp4",
+            "safety":"/images/safety.jpg",
+            "autopilot":"/images/autopilot.jpg",
+            "navigate":"/videos/navigate.mp4",
+            "specs":"/images/specs.jpg",
+            "hero":"/images/hero.jpg"
+        }
+    ]
+}
