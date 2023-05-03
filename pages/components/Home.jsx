@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 //import Section from "./Section";
 function HomeScreen({data}) {
+  console.log('dtat')
+  console.log(data)
   return (
     
       
         <Container>
-          {data.map(props=>(
+          {data?.map(props=>(
             <div key={props.name}>
               <Wrap bgImage={props.image}>
              
