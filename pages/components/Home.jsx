@@ -6,7 +6,7 @@ function HomeScreen({data}) {
     
       
         <Container>
-          {data.map((props)=>(
+          {data.map(props=>(
             <div key={props.name}>
               <Wrap bgImage={props.image}>
              
