@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-function modelst({ datta }) {
-  console.log(datta);
+import { useRouter } from "next/router";
+function modelst({ datta,id }) {
+  console.log(id);
+  const router=useRouter()
+  if(id==="roof"){
+    router.push('/roof')
+  }
   return (
     <Container>
       <Wrap bgImage={datta.image}>
@@ -528,6 +533,7 @@ export async function getStaticProps(context) {
   const { all } = await import("../../components/data/data.json");
   const Data = all.find((ev) => id === ev.slug);
   return {
-    props: { datta: Data },
+    props: { datta: Data ,
+    id},
   };
 }

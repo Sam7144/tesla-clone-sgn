@@ -1,9 +1,10 @@
+"use client"
+import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
-//import Section from "./Section";
 function HomeScreen({data}) {
-  console.log('dtat')
-  console.log(data)
+  const router=useRouter();
+ 
   return (
     
       
@@ -21,13 +22,15 @@ function HomeScreen({data}) {
               
                 <ButtonGroup>
                   <ButtonLeft>{props.leftBtn}</ButtonLeft>
-                  {props.RightBtn&&
-                  <ButtonRight>
-                    <a href={`/model/${props.slug}`}>
-                      {props.RightBtn}
-                      </a>
+                 
+               {props.RightBtn&&
+                  <ButtonRight   onClick={()=>props.slug==="roof"?router.push('/solarroof'):(
+                    props.slug==="panels"?router.push('/powerwall'):router.push(`/model/${props.slug}`)
+                  )}>  
+                    {props.RightBtn} 
+                      
                     </ButtonRight>
-                  }
+}
                 </ButtonGroup>
            
                 <DownArrow src="./images/down-arrow.svg" alt='arrow-down'/>
