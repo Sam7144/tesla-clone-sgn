@@ -21,11 +21,13 @@ function HomeScreen({data}) {
              <Buttons>
               
                 <ButtonGroup>
-                  <ButtonLeft>{props.leftBtn}</ButtonLeft>
+                  <ButtonLeft  onClick={()=>props.slug==="roof"?router.push(`/design/${props.slug}`):(
+                    props.slug==="panels"?router.push(`/design/${props.slug}`):(props.slug==="powerwall"?router.push(`/design/${props.slug}`):router.push(`/cars/${props.slug}`))
+                  )}>{props.leftBtn}</ButtonLeft>
                  
                {props.RightBtn&&
                   <ButtonRight   onClick={()=>props.slug==="roof"?router.push('/solarroof'):(
-                    props.slug==="panels"?router.push('/powerwall'):router.push(`/model/${props.slug}`)
+                    props.slug==="panels"?router.push('/solarpanel'):(props.slug==="powerwall"?router.push('/powerwall'):router.push(`/model/${props.slug}`))
                   )}>  
                     {props.RightBtn} 
                       

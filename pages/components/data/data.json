@@ -71,12 +71,13 @@
             "RightBtn":"Learn more",
             "description":"Produce Clean Energy From Your Roof"
         },
-
         {
-            "name":"Accessories",
-            "slug":"accessories",
-            "image":"/images/accessories.jpg",
-            "leftBtn":"Shop Now"
+            "name":"PowerWall",
+            "slug":"powerwall",
+            "image":"/images/powerwall1.jpg",
+            "leftBtn":"Order now",
+            "RightBtn":"Learn more",
+            "description":"Produce Clean Energy at Your Comfort"
         }
     ],
     "all":[

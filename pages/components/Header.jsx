@@ -1,7 +1,11 @@
+import { useSession } from "next-auth/react";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 function Header() {
   const [menuState, setMenuState] = useState(false);
+  const {cartItems}=useSelector(state=>state.cart);
+  const {data:session}=useSession();
   return (
     <Container>
 
@@ -19,8 +23,11 @@ function Header() {
           <a href="/powerwall">Power Wall</a>
         </Menu>
         <RightMenu>
-          <a href="/shop">Shop</a>
-          <a href="/">Tesla Account</a>
+          <a href="/cart" className="relative text-black">
+            cart<span className="text-red-600"
+            >{cartItems.length}</span></a>
+
+          {session?`<a>${session.user.name}</a>`:<a href="/login">login</a>}
           <Image
             src="/images/icon-menu.svg"
             onClick={() => setMenuState(true)}
@@ -83,7 +90,6 @@ export const Menu = styled.div`
   justify-content: center;
   flex: 1;
   a {
-    color: white;
     font-weight: 600;
     text-transform: uppercase;
     padding: 0 10px;
@@ -97,7 +103,6 @@ export const RightMenu = styled.div`
   display: flex;
   align-items: center;
   a {
-    color: white;
     font-weight: 600;
     text-transform: uppercase;
     margin-right: 10px;

@@ -12,7 +12,7 @@ function powerwall() {
               <p>Beautiful Solar</p>
               <p>25 yrs Tile Warranty</p>
               <p>24/7 Outage Protection</p>
-              <p><a href='/'>Order now</a></p>
+              <p><a href='/design/roof'>Order now</a></p>
             </EnergyProp>
             <DownArrow src="./images/down-arrow.svg" alt='arrow-down'/>
             </EnergyWrap>
@@ -47,7 +47,7 @@ alerts before severe weathe</h3>
         <FinalText>
           <p>With the Tesla app, you can monitor your solar energy in real time. Set your preferences to optimize for energy independence, outage protection or savings. Control 
             your system from anywhere with remote access and instant alerts.</p>
-          <p><a href='/'>Order Now</a></p>  
+          <p><a href='/design/roof'>Order Now</a></p>  
         </FinalText>
        </Final>
     </Container>

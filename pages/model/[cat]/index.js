@@ -31,12 +31,10 @@ function modelst({ datta,id }) {
             </Miles>
           </ItemSpeed>
           <ButtonGroup>
-            <ButtonLeft>{datta.leftBtn}</ButtonLeft>
-            {datta.RightBtn && (
-              <ButtonRight>
-                <a href="/">{datta.RightBtn}</a>
-              </ButtonRight>
-            )}
+            <ButtonLeft>
+              <a href={`/cars/${datta.slug}`}>{datta.leftBtn}</a>
+            </ButtonLeft>
+            
           </ButtonGroup>
         </Buttons>
       </Wrap>
@@ -123,8 +121,8 @@ function modelst({ datta,id }) {
             <h2>Exterior</h2>
             <h1>Designed for Efficiency</h1>
 
-            <p><a href='/'>Order Now</a></p>
-             <p> <a href='/'>View Inventory</a></p>
+            <p><a href={`/cars/${datta.slug}`}>Order Now</a></p>
+            
           </Exteriorleft>
           <ExteriorRight>
             <p>

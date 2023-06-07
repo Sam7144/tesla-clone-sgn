@@ -1,0 +1,7 @@
+.input_group{
+    @applyborder rounded-xl;
+    position: relative;
+}
+.button_custom{
+    @apply w-full border py-2 flex justify-center gap-2 hover:bg-gray-200
+}

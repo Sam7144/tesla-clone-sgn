@@ -12,7 +12,7 @@ function powerwall() {
               <p>Backup Energy Storange</p>
               <p>outrange protection</p>
               <p>Energy Independence</p>
-              <p><a href='/'>Order now</a></p>
+              <p><a href='/design/powerwall'>Order now</a></p>
             </EnergyProp>
             <DownArrow src="./images/down-arrow.svg" alt='arrow-down'/>
             </EnergyWrap>
@@ -58,7 +58,7 @@ alerts before severe weathe</h3>
         <FinalText>
           <p>With the Tesla app, you can monitor your solar energy in real time. Set your preferences to optimize for energy independence, outage protection or savings. Control 
             your system from anywhere with remote access and instant alerts.</p>
-          <p><a href='/'>Order Now</a></p>  
+          <p><a href='/design/powerwall'>Order Now</a></p>  
         </FinalText>
        </Final>
     </Container>
