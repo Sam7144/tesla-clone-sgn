@@ -39,11 +39,10 @@ export default function register() {
                 
                 <input type="email" id='email' name="email" placeholder='Email Address'onChange={formik.handleChange} value={formik.values.email} className="w-full bg-slate-50 py-4 px-6 focus:outline-none border-none"/>
             </div>
-            {formik.errors.email &&formik.touched.email?<span className="text-rose-500">{formik.errors.email}</span>:<></>}
+            {formik.errors.email?}
             <div className='border rounded-xl w-3/4 mx-auto'>
             <input type="password" id='pass' name="pass" placeholder='Password' onChange={formik.handleChange} value={formik.values.password} className="w-full bg-slate-50 py-4 px-6 focus:outline-none border-none"/>
             </div>
-            {formik.errors.password &&formik.touched.password?<span className="text-rose-500">{formik.errors.password}</span>:<></>}
             <div className='border rounded-xl w-3/4 mx-auto'>
                 <button type="submit" className="w-full bg-gradient-to-r from-blue-500 to-indigo-500
                  hover:bg-gray-100 rounded-md py-3 text-lg text-gray-50 hover:border hover:text-gray-700">submit</button>
@@ -58,4 +57,43 @@ export default function register() {
   )
 }
 
+import { configureStore } from "@reduxjs/toolkit"
+import cartSlice from "./cartSlice"
+import storage from "redux-persist/lib/storage"
+import { persistReducer,persistStore } from "redux-persist"
+const persistConfig={
+    key:"persist-key",
+    storage
+}
+const persistedReducer=persistReducer(persistConfig,cartSlice)
+const store=configureStore({
+    reducer:{
+        cart:persistedReducer
+    }
+})
+const persistor=persistStore(store)
+export default store
+export {persistor}
+import "../styles/globals.css";
+import Layout from "./components/Layout";
+import { Provider } from "react-redux";
+import store, { persistor } from "../store/store";
+import { SessionProvider } from "next-auth/react";
+import { PersistGate } from "redux-persist/integration/react";
+export default function App({ Component, pageProps }) {
+  return (
+    <SessionProvider session={pageProps.session}>
+      <Provider store={store}>
+        <PersistGate persistor={persistor}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </PersistGate>
+      </Provider>
+    </SessionProvider>
+  );
+}
+import { useDispatch } from "react-redux";
+import { add } from "@/store/cartSlice";
+md:flex
 

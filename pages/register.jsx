@@ -3,7 +3,22 @@ import React from "react";
 import styled from "styled-components";
 import styles from "../styles/Form.module.css";
 import Image from "next/image";
+import {registerValidate} from "../lib/validate"
+import { useFormik } from 'formik';
 export default function register() {
+  const formik=useFormik({
+    initialValues:{
+      username:'',
+        email:'',
+        password:'',
+        cpassword:''
+    },
+    validate:registerValidate,
+    onSubmit
+})
+async function onSubmit(values){
+    console.llog(values)
+}
   return (
     <div className='wrapper mt-[80px] text-center w-full lg:w-[400px]  mx-auto py-10'>
       <div>
@@ -15,41 +30,49 @@ export default function register() {
             sign up
           </a>
         </Link>
-        <form className="flex flex-col gap-5 border p-7 rounded-md mt-7">
+        <form className="flex flex-col gap-5 border p-7 rounded-md mt-7" onSubmit={formik.handleSubmit}>
           <div className="border rounded-xl w-full mx-auto">
             <input
               type="text"
               name="name"
               placeholder="Name"
+              {...formik.getFieldProps('username')}
               className="w-full bg-slate-50 py-2 px-6 focus:outline-none border-none"
             />
           </div>
+          {formik.errors.username &&formik.touched.username?<span className="text-rose-500">{formik.errors.username}</span>:<></>}
           <div className="border rounded-xl w-full mx-auto">
             <input
               type="email"
               id="email"
               name="email"
               placeholder="Email Address"
+              {...formik.getFieldProps('email')}
               className="w-full bg-slate-50 py-2 px-6 focus:outline-none border-none"
             />
           </div>
+          {formik.errors.email &&formik.touched.email?<span className="text-rose-500">{formik.errors.email}</span>:<></>}
           <div className="border rounded-xl w-full mx-auto">
             <input
               type="password"
               id="pass"
               name="pass"
               placeholder="Password"
+              {...formik.getFieldProps('password')}
               className="w-full bg-slate-50 py-2 px-6 focus:outline-none border-none"
             />
             </div>
+            {formik.errors.password &&formik.touched.password?<span className="text-rose-500">{formik.errors.password}</span>:<></>}
             <div className="border rounded-xl w-full mx-auto">
             <input
               type="password"
               name="confirmPassword"
               placeholder="Confirm Password"
+              {...formik.getFieldProps('cpassword')}
               className="w-full bg-slate-50 py-2 px-6 focus:outline-none border-none"
             />
           </div>
+          {formik.errors.cpassword &&formik.touched.cpassword?<span className="text-rose-500">{formik.errors.cpassword}</span>:<></>}
           <div className="border rounded-xl w-full mx-auto">
             <button
               type="submit"

@@ -9,15 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
     "@heroicons/react": "^2.0.18",
     "@next/font": "13.3.0",
     "@reduxjs/toolkit": "^1.9.5",
+    "bcryptjs": "^2.4.3",
     "cookies": "^0.8.0",
+    "formik": "^2.4.1",
     "js-cookie": "^3.0.5",
     "mongoose": "^7.2.2",
     "next": "13.3.0",
     "next-auth": "^4.22.1",
     "react": "18.2.0",
+    "react-awesome-reveal": "^4.2.3",
     "react-cookie": "^4.1.1",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.44.3",
@@ -25,6 +29,7 @@
     "react-redux": "^8.0.7",
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
+    "sass": "^1.62.1",
     "styled-components": "^5.3.9"
   },
   "devDependencies": {

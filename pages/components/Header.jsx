@@ -1,10 +1,8 @@
 import { useSession } from "next-auth/react";
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import styled from "styled-components";
 function Header() {
   const [menuState, setMenuState] = useState(false);
-  const {cartItems}=useSelector(state=>state.cart);
   const {data:session}=useSession();
   return (
     <Container>
@@ -25,9 +23,9 @@ function Header() {
         <RightMenu>
           <a href="/cart" className="relative text-black">
             cart<span className="text-red-600"
-            >{cartItems.length}</span></a>
+            >0</span></a>
 
-          {session?`<a>${session.user.name}</a>`:<a href="/login">login</a>}
+          {session?`${session.user.name}`:<a href="/login">login</a>}
           <Image
             src="/images/icon-menu.svg"
             onClick={() => setMenuState(true)}
