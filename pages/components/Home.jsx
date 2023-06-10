@@ -11,7 +11,7 @@ function HomeScreen({data}) {
       
         <Container>
           {data?.map(props=>(
-            <Fade direction="up">
+            <Fade >
             <div key={props.name}>
                
               <Wrap bgImage={props.image}>
