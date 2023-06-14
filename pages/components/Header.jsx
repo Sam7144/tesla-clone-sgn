@@ -1,9 +1,12 @@
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import React, { useState } from "react";
 import styled from "styled-components";
 function Header() {
   const [menuState, setMenuState] = useState(false);
   const {data:session}=useSession();
+  const logout=()=>{
+    signOut();
+  }
   return (
     <Container>
 
@@ -24,8 +27,8 @@ function Header() {
           <a href="/cart" className="relative text-black">
             cart<span className="text-red-600"
             >0</span></a>
-
-          {session?`${session.user.name}`:<a href="/login">login</a>}
+            {session?<a onClick={logout}>logout</a>:<a>signin</a>}
+          {session?`${session.user.name}`:""}
           <Image
             src="/images/icon-menu.svg"
             onClick={() => setMenuState(true)}

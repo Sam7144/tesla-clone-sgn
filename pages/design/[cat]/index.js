@@ -1,6 +1,17 @@
+import { Store } from "@/store2/Store";
 import Image from "next/image";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useContext } from "react";
 const CarsComponets = ({ datta }) => {
+  const{state,dispatch}=useContext(Store);
+  const router = useRouter();
+  const product=datta;
+  const addToCart=()=>{
+    const existitem=state.cart.cartItems.find((x)=>x.name===product.name);
+    const quantity=existitem?existitem.quantity+1:1;
+    dispatch({type:"ADD_TO_CART",payload:{...product,quantity}})
+    router.push('/cart');
+  }
   return (
     <div className="bg-white wrapper mt-[80px] grid grid-cols-1 w-full md:grid-cols-2 gap-10 px-3">
       <Image
@@ -15,7 +26,9 @@ const CarsComponets = ({ datta }) => {
       <p className=" text-gray-400 py-3 ">{datta.description}</p>
       <h1 className="font-medium pb-2">Price-${datta.price}</h1>
       <p className="text-gray-400">{datta.stcok}</p>
-      <button className="my-5 py-4 bg-blue-700 text-white font-medium text-sm rounded-md hover:bg-blue-400 w-[250px]">ADD TO CART</button>
+      <button className="my-5 py-4 bg-blue-700 text-white font-medium text-sm 
+      rounded-md hover:bg-blue-400 w-[250px]"
+          onClick={addToCart}>ADD TO CART</button>
       <div className="border mt-3 mb-10"/>
       <div className="">
         <h1 className="text-xl font-medium">HighLights</h1>

@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import { XCircleIcon } from "@heroicons/react/24/outline";
 import CartEmpty from "./cartProps/cartEmpty";
 import { Store } from "@/store2/Store";
 import dynamic from "next/dynamic";
+import {useRouter}  from "next/navigation";
 function Cart() {
+  const router=useRouter()
   const { state, dispatch } = useContext(Store);
   const removeCartIem = (item) => {
     dispatch({ type: "REMOVE_CART_ITEM", payload: item });
@@ -96,7 +97,7 @@ function Cart() {
                   </li>
                   <li>
                     <button
-                      onClick={() => router.push("login?redirect=/shipping")}
+                      onClick={() => router.push("/checkout")}
                       className="primary-button w-full"
                     >
                       Check Out
