@@ -2,8 +2,6 @@
 import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
-import {Fade} from "react-awesome-reveal"
-import FadeIn from 'react-fade-in';
 function HomeScreen({data}) {
   const router=useRouter();
  
@@ -12,7 +10,6 @@ function HomeScreen({data}) {
       
         <Container>
           {data?.map(props=>(
-            <FadeIn>
             <div key={props.name}>
                
               <Wrap bgImage={props.image}>
@@ -43,7 +40,6 @@ function HomeScreen({data}) {
              </Buttons>
             </Wrap>
             </div>
-            </FadeIn>
           ))}
         </Container>
 

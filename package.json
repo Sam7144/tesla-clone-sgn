@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
     "@next/font": "13.3.0",
     "@reduxjs/toolkit": "^1.9.5",
@@ -22,16 +20,10 @@
     "next": "13.3.0",
     "next-auth": "^4.22.1",
     "react": "18.2.0",
-    "react-awesome-reveal": "^4.2.3",
     "react-cookie": "^4.1.1",
     "react-dom": "18.2.0",
-    "react-fade-in": "^2.0.1",
     "react-hook-form": "^7.44.3",
     "react-icons": "^4.9.0",
-    "react-redux": "^8.0.7",
-    "redux": "^4.2.1",
-    "redux-persist": "^6.0.0",
-    "sass": "^1.62.1",
     "styled-components": "^5.3.9"
   },
   "devDependencies": {
