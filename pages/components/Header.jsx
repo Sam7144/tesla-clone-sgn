@@ -1,5 +1,6 @@
+"use client"
 import { signOut, useSession } from "next-auth/react";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 function Header() {
   const [menuState, setMenuState] = useState(false);
@@ -24,12 +25,12 @@ function Header() {
           <a href="/powerwall">Power Wall</a>
         </Menu>
         <RightMenu>
-          <a href="/cart" className="relative text-black">
-            cart<span className="text-red-600"
-            >0</span></a>
-            {session?<a onClick={logout}>logout</a>:<a>signin</a>}
-          {session?`${session.user.name}`:""}
-          <Image
+          <a href="/cart" className="relative text-black flex">
+            <Image src="/images/cart.png" alt="" width={20} height={20} className="mt-[5px]"/>
+            <span className="text-red-600 mt-[-5px]"
+            ></span></a>
+            {session?<a className="font-bold text-xs " onClick={logout}>logout</a>:<a className="font-bold text-xs ">signin</a>}
+          <span className="text-base font-semibold mx-2 bg-red-600 text-black px-2 rounded-full">{session?`${session.user?.name?.substring(0, 1)}`:""}</span>          <Image
             src="/images/icon-menu.svg"
             onClick={() => setMenuState(true)}
             alt="menu"

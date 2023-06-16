@@ -1,32 +1,40 @@
-"use client";
-import { Store } from "@/store2/Store";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import react, { useContext } from "react";
-export default function CheckoutPage() {
+import { Store } from "../store2/Store";
+import dynamic from "next/dynamic";
+import CartEmpty from "./cartProps/cartEmpty";
+ function CheckoutPage() {
   const { state, dispatch } = useContext(Store);
-  const products = state.cart.cartItems;
+  console.log(state.cart.cartItems)
+  const router = useRouter();
   return (
     <>
+    {state.cart.cartItems.length===0?(
+      <div className="mt-[80px] text-center">
+      <h2>cart is empty go back to shooping</h2>
+      <CartEmpty />
+    </div>
+    ):(
       <main className="lg:min-h-full lg:overflow-hidden lg:flex lg:flex-row-reverse">
         <h1 className="sr-only mt-[80px]">Checkout</h1>
 
         {/* Order summary */}
         <section
-          aria-labelledby="summary-heading"
           className="hidden bg-gray-50 w-full max-w-md flex-col lg:flex mt-16"
         >
-          <h2 id="summary-heading" className="sr-only">
+          <h2 className="sr-only">
             Order summary
           </h2>
 
           <ul
             className="flex-auto overflow-y-auto divide-y divide-gray-200 px-6"
           >
-            {products.map((product) => (
-              <li key={product.id} className="flex py-6 space-x-6">
+            {state.cart.cartItems.map(product => (
+              <li key={product.slug} className="flex py-6 space-x-6">
                 <Image
                   src={product.img}
-                  alt={product.slug}
+                  alt=""
                   width={400}
                   height={400}
                   className="flex-none w-40 h-40 object-center object-cover bg-gray-200 rounded-md"
@@ -52,7 +60,7 @@ export default function CheckoutPage() {
             <dl className="text-sm font-medium text-gray-500 mt-1">
               <div className="flex items-center justify-between border-t border-gray-200 text-gray-900 pt-2">
                  <dt>Total</dt> 
-                <dd className="text-base">
+                 <dd className="text-base">
                   {" "}
                   (
                       {state.cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
@@ -69,7 +77,7 @@ export default function CheckoutPage() {
 
         {/* Checkout form */}
         <section
-          aria-labelledby="payment-heading"
+          
           className="flex-auto overflow-y-auto px-4 pt-12 pb-16 sm:px-6 sm:pt-16 lg:px-8 lg:pt-0 lg:pb-24"
         >
           <h2 id="payment-heading" className="sr-only">
@@ -90,7 +98,6 @@ export default function CheckoutPage() {
                     <input
                       type="email"
                       id="email-address"
-                      name="email-address"
                       autoComplete="email"
                       className="appearance-none block w-full px-3 py-2  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
@@ -108,7 +115,7 @@ export default function CheckoutPage() {
                     <input
                       type="text"
                       id="name-on-card"
-                      name="name-on-card"
+                      
                       autoComplete="cc-name"
                       className="appearance-none block w-full px-3 py-2  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
@@ -126,7 +133,6 @@ export default function CheckoutPage() {
                     <input
                       type="text"
                       id="card-number"
-                      name="card-number"
                       autoComplete="cc-number"
                       className="appearance-none block w-full px-3 py-2  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
@@ -143,7 +149,6 @@ export default function CheckoutPage() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      name="expiration-date"
                       id="expiration-date"
                       autoComplete="cc-exp"
                       className="appearance-none block w-full px-3 py-2  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -161,7 +166,7 @@ export default function CheckoutPage() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      name="cvc"
+                      
                       id="cvc"
                       autoComplete="csc"
                       className="appearance-none block w-full px-3 py-2  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -180,7 +185,7 @@ export default function CheckoutPage() {
                     <input
                       type="text"
                       id="address"
-                      name="address"
+                      
                       autoComplete="street-address"
                       className="appearance-none block w-full px-3 py-2  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
@@ -198,7 +203,7 @@ export default function CheckoutPage() {
                     <input
                       type="text"
                       id="city"
-                      name="city"
+                      
                       autoComplete="address-level2"
                       className="appearance-none block w-full px-3 py-2  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
@@ -216,7 +221,7 @@ export default function CheckoutPage() {
                     <input
                       type="text"
                       id="regino"
-                      name="regino"
+                     
                       autoComplete="address-level1"
                       className="appearance-none block w-full px-3 py-2  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
@@ -234,7 +239,7 @@ export default function CheckoutPage() {
                     <input
                       type="text"
                       id="postal-code"
-                      name="postal-code"
+                     
                       autoComplete="postal-code"
                       className="appearance-none block w-full px-3 py-2  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
@@ -246,7 +251,7 @@ export default function CheckoutPage() {
                 <div className="flex items-center h-5">
                   <input
                     id="same-as-shipping"
-                    name="same-as-shipping"
+                    
                     type="checkbox"
                     defaultChecked
                     className="h-4 w-4 border-gray-100 rounded text-indigo-600 focus:ring-indigo-500"
@@ -262,12 +267,13 @@ export default function CheckoutPage() {
 
               <button
                 type="submit"
+                onClick={()=>router.push('/order')}
                 className="w-full mt-6 bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
                 pay(
-                      {products.reduce((a, c) => a + c.quantity, 0)}
+                      {state.cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                       ) : $
-                      {products.reduce(
+                      {state.cart.cartItems.reduce(
                         (a, c) => a + c.quantity * c.price,
                         0
                       )
@@ -277,6 +283,8 @@ export default function CheckoutPage() {
           </div>
         </section>
       </main>
+      )}
     </>
   );
 }
+export default dynamic(() => Promise.resolve(CheckoutPage), { ssr: false });

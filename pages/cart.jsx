@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { XCircleIcon } from "@heroicons/react/24/outline";
 import CartEmpty from "./cartProps/cartEmpty";
-import { Store } from "@/store2/Store";
 import dynamic from "next/dynamic";
 import {useRouter}  from "next/navigation";
+import { Store } from "../store2/Store";
 function Cart() {
   const router=useRouter()
   const { state, dispatch } = useContext(Store);
@@ -24,7 +24,7 @@ function Cart() {
       <div className={` w-full`}>
         <div className={`w-full`}>
           {state.cart.cartItems.length === 0 ? (
-            <div>
+            <div className="mt-[80px] text-center">
               <h2>cart is empty go back to shooping</h2>
               <CartEmpty />
             </div>

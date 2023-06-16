@@ -1,8 +1,9 @@
-import { Store } from "@/store2/Store";
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 ;
 import React, { useContext } from "react";
+import { Store } from "../../../store2/Store";
 const CarsComponets = ({ datta }) => {
   const{state,dispatch}=useContext(Store);
   const router = useRouter();
