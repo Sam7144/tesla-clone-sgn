@@ -2,7 +2,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
-import { Fade } from "react-awesome-reveal";
+import Fade from "react-reveal/Fade";
 function HomeScreen({ data }) {
   const router = useRouter();
 
@@ -10,7 +10,7 @@ function HomeScreen({ data }) {
     <Container>
       {data?.map((props) => (
         <div key={props.name}>
-          
+          <Fade bottom>
             <Wrap bgImage={props.image}>
               <ItemText>
                 <h1>{props.name}</h1>
@@ -53,7 +53,7 @@ function HomeScreen({ data }) {
                 <DownArrow src="./images/down-arrow.svg" alt="arrow-down" />
               </Buttons>
             </Wrap>
-          
+          </Fade>
         </div>
       ))}
     </Container>
