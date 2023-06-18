@@ -8,6 +8,8 @@ import useWindowSize from "react-use/lib/useWindowSize";
 import { Store } from "../store2/Store"
 import cart from "./cart";
 import CartEmpty from "./cartProps/cartEmpty";
+import { getSession } from "next-auth/react";
+import { redirect} from "next/navigation";
 function Order() {
    const { width, height } = useWindowSize();
    const { state, dispatch } = useContext(Store);
@@ -128,3 +130,18 @@ function Order() {
    );
 }
 export default dynamic(() => Promise.resolve(Order), { ssr: false });
+export default dynamic(() => Promise.resolve(CheckoutPage), { ssr: false });
+export async function getServerSideProps({ req }) {
+  const session = await getSession({ req });
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/login",
+        premanent: false,
+      },
+    };
+  }
+  return{
+    props:{session}
+  }
+}
