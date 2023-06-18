@@ -130,7 +130,6 @@ function Order() {
    );
 }
 export default dynamic(() => Promise.resolve(Order), { ssr: false });
-export default dynamic(() => Promise.resolve(CheckoutPage), { ssr: false });
 export async function getServerSideProps({ req }) {
   const session = await getSession({ req });
   if (!session) {
