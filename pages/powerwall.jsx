@@ -112,6 +112,16 @@ a{
   padding-inline:20px;
   padding-block:10px;
 }
+@media (max-width:700px){
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  height:auto;
+  justify-content:space-between;
+  p{
+    height:auto;
+  }
+}
 
 `
 export const DownArrow = styled.img`

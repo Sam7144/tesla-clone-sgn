@@ -6,7 +6,9 @@ import Image from 'next/image'
 import {useSession,signOut,signIn} from "next-auth/react";
 import { useFormik } from 'formik';
 import loginValidate from '@/lib/validate'
+import { useRouter } from 'next/router'
 export default function register() {
+    const router=useRouter()
     const formik=useFormik({
         initialValues:{
             email:'',
@@ -17,7 +19,13 @@ export default function register() {
     })
     console.log(formik.errors)
     async function onsubmit(values){
-        console.llog(values)
+        const status=await signIn("credentials",{
+            redirect:false,
+            email:values.email,
+            password:values.password,
+            callbackUrl:"/"
+        })
+        if(status.ok)router.push(status.url)
     }
     const handleGoogleSign=async()=>{
         signIn('google',{

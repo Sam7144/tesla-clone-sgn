@@ -72,10 +72,14 @@ function Cart() {
                           </div>
                           <p className="text-sm w-[80%]">{item.description}</p>
                           <p className="py-2">${item.price}</p>
+                          <Image src="/images/check.png" alt="" width={20} height={20} className="mt-10"/>
                         </div>
+                       
                         
                       </div>
+                     
                     </div>
+                    
                   </div>
                 </div>
                 

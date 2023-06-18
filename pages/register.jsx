@@ -5,7 +5,9 @@ import styles from "../styles/Form.module.css";
 import Image from "next/image";
 import {registerValidate} from "../lib/validate"
 import { useFormik } from 'formik';
+import { useRouter } from "next/router";
 export default function register() {
+  const router=useRouter()
   const formik=useFormik({
     initialValues:{
       username:'',
@@ -17,7 +19,17 @@ export default function register() {
     onSubmit
 })
 async function onSubmit(values){
-    console.llog(values)
+    const options={
+      method:"POST",
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(values)
+    }
+    await fetch("http://localhost:3000/api/auth/signup",options).then(res=>res.json()).then((data)=>{
+      if(data){
+        router.push('http://localhost:3000')
+      }
+
+    })
 }
   return (
     <div className='wrapper mt-[80px] text-center w-full lg:w-[400px]  mx-auto py-10'>
