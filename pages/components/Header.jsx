@@ -2,16 +2,22 @@ import { signOut, useSession } from "next-auth/react";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { FaOpencart } from "react-icons/fa";
+import { Store } from "@/store2/Store";
 //import { Store } from "@/store2/Store";
 
 function Header() {
   const [menuState, setMenuState] = useState(false);
+  const [cartCount,setCartCount]=useState(0)
   const { data: session } = useSession();
-  //const { state, dispatch } = useContext(Store);
+  const { state, dispatch } = useContext(Store);
   const logout = () => {
     signOut();
   };
-  
+
+  useEffect(()=>{
+    setCartCount(state.cart.cartItems.reduce((a, c) => a + c.quantity, 0))
+  },[state.cart.cartItems])
+  console.log(cartCount)
  
   return (
     <Container>
@@ -34,7 +40,7 @@ function Header() {
         <a href="/cart" className="relative items-center flex mt-1">
           <FaOpencart className="h-8 w-8 " />
           <p className="absolute -top-0 right-1 flex items-center justify-center bg-red-600 text-white h-5 w-5 text-sm font-bold rounded-full">
-           {/* {state.cart.cartItems.length} */}
+           {cartCount}
           </p>
         </a>
         {session ? (
