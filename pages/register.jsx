@@ -25,9 +25,8 @@ async function onSubmit(values){
       body:JSON.stringify(values)
     }
     await fetch("http://localhost:3000/api/auth/signup",options).then(res=>res.json()).then((data)=>{
-      if(data){
-        router.push('http://localhost:3000')
-      }
+      if(data)router.push('http://localhost:3000')
+      
 
     })
 }
@@ -46,7 +45,7 @@ async function onSubmit(values){
           <div className="border rounded-xl w-full mx-auto">
             <input
               type="text"
-              name="name"
+              name="username"
               placeholder="Name"
               {...formik.getFieldProps('username')}
               className="w-full bg-slate-50 py-2 px-6 focus:outline-none border-none"
@@ -68,7 +67,7 @@ async function onSubmit(values){
             <input
               type="password"
               id="pass"
-              name="pass"
+              name="password"
               placeholder="Password"
               {...formik.getFieldProps('password')}
               className="w-full bg-slate-50 py-2 px-6 focus:outline-none border-none"
@@ -78,7 +77,7 @@ async function onSubmit(values){
             <div className="border rounded-xl w-full mx-auto">
             <input
               type="password"
-              name="confirmPassword"
+              name="cpassword"
               placeholder="Confirm Password"
               {...formik.getFieldProps('cpassword')}
               className="w-full bg-slate-50 py-2 px-6 focus:outline-none border-none"
@@ -91,7 +90,7 @@ async function onSubmit(values){
               className="w-full bg-gradient-to-r from-blue-500 to-indigo-500
                  hover:bg-gray-100 rounded-md py-2 text-lg text-gray-50 hover:border hover:text-gray-700"
             >
-              submit
+              Register
             </button>
           </div>
         </form>

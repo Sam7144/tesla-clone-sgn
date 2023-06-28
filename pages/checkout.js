@@ -280,7 +280,7 @@ export async function getServerSideProps({ req }) {
     return {
       redirect: {
         destination: "/login",
-        premanent: false,
+        permanent: false,
       },
     };
   }

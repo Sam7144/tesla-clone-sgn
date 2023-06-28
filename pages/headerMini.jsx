@@ -1,7 +1,6 @@
 import React from 'react'
 
 function HeaderMini({data}) {
-    console.log(data)
   return (
     <div>
         {/* {data.map((ev)=>(

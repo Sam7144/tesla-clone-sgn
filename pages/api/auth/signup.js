@@ -6,7 +6,7 @@ export default async function handler(req,res){
     connectMongo().catch(err=>res.json({err:"Connection Failed..!"}));
     if(req.method==="POST"){
         if(!req.body){
-            res.status(404).json({error:"Dont have any data"})
+            return res.status(404).json({error:"Dont have any data"})
         }
         const {username,email,password}=req.body;
         const existUser=await Users.findOne({email});

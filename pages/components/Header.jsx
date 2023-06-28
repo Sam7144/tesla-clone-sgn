@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { FaOpencart } from "react-icons/fa";
 import { Store } from "@/store2/Store";
-//import { Store } from "@/store2/Store";
 
 function Header() {
   const [menuState, setMenuState] = useState(false);
@@ -17,7 +16,6 @@ function Header() {
   useEffect(()=>{
     setCartCount(state.cart.cartItems.reduce((a, c) => a + c.quantity, 0))
   },[state.cart.cartItems])
-  console.log(cartCount)
  
   return (
     <Container>
